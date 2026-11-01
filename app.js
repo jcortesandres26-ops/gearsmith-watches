@@ -385,7 +385,17 @@ ${night}
   let wish = load("tm_wish", []);
   let coupon = load("tm_coupon", null);
   let user = load("tm_user", null);
-  let reviews = load("gs_reviews", null) || [];
+  // Valoraciones reales copiadas tal cual del perfil de Wallapop (Daniel C.)
+  const WALLAPOP = "https://es.wallapop.com/user/danielc-481839043/reviews";
+  const reviews = [
+    { n: "Juan Carlos J.", s: 5, h: "Pack de 2", t: "El reloj Mod espectacular. Super atento.. comunicación constante sobre el producto, envio ... 100% recomendable", d: "22/10/2026" },
+    { n: "Alvaro G.", s: 5, h: "Reloj Seiko mod Aquanaut", t: "Excelente vendedor, rapido y un gran producto volveria a comprar sin dudas", d: "19/10/2026" },
+    { n: "marti manel g.", s: 5, h: "Reloj Seiko mod Daytona VK63", t: "Excelente trato con una alta calidad del producto.", d: "16/10/2026" },
+    { n: "Thomas C.", s: 5, h: "Reloj Seiko mod Submariner Automatico", t: "Excelente vendedor y producto conforme a la fotografía 👌", d: "02/10/2026" },
+    { n: "Daniel J.", s: 5, h: "Reloj Seiko mod Aquanaut", t: "Vendedor muy bueno", d: "29/09/2026" },
+    { n: "Vicente", s: 5, h: "Reloj Casio Edifice Sapphire", t: "Genial! Todo perfecto.", d: "24/09/2026" },
+    { n: "Alberto P.", s: 5, h: "Reloj Seiko 5 Sport Automático Vintage", t: "Todo genial. Muy buen trato y rápido en el envío. El producto tal y como se describe. Recomendado", d: "19/09/2026" },
+  ];
   const CODES = { GEARSMITH10: 10, HALLOWEEN15: 15 };
   const FREE_SHIP = 0; // envío siempre gratis
   const DEF = { q: "", col: "Todos", mov: "Todos", color: "Todos", max: 300, stock: false, sort: "featured", shown: 24 };
@@ -693,8 +703,8 @@ ${night}
     $("#faqEmpty").hidden = list.length > 0;
   }
   function renderReviews() {
-    $("#reviewCount").textContent = `${reviews.length} reseña${reviews.length === 1 ? "" : "s"}`;
-    $("#reviews").innerHTML = (reviews.length ? "" : '<p class="sub">Aún no hay reseñas. ¡Sé el primero en contar qué te parece tu reloj!</p>') + reviews.slice(0, 9).map((r) => `<article class="review"><div class="stars" aria-label="${r.s} de 5">${"★".repeat(r.s)}${"☆".repeat(5 - r.s)}</div><h4>${esc(r.h)}</h4><p>“${esc(r.t)}”</p><div class="who"><span class="avatar">${esc(r.n[0] || "?")}</span><div><b>${esc(r.n)}</b><br><span class="verified">✓ Compra verificada · ${esc(r.d || "")}</span></div></div></article>`).join("");
+    $("#reviewCount").innerHTML = `★★★★★ 5,0 · ${reviews.length} valoraciones en <a href="${WALLAPOP}" target="_blank" rel="noopener">Wallapop</a>`;
+    $("#reviews").innerHTML = (reviews.length ? "" : '<p class="sub">Aún no hay reseñas. ¡Sé el primero en contar qué te parece tu reloj!</p>') + reviews.slice(0, 9).map((r) => `<article class="review"><div class="stars" aria-label="${r.s} de 5">${"★".repeat(r.s)}${"☆".repeat(5 - r.s)}</div><h4>${esc(r.h)}</h4><p>“${esc(r.t)}”</p><div class="who"><span class="avatar">${esc(r.n[0] || "?")}</span><div><b>${esc(r.n)}</b><br><span class="verified">✓ Compra en Wallapop · ${esc(r.d || "")}</span></div></div></article>`).join("");
   }
 
   // ================= Cuenta atrás y ruleta =================
@@ -791,11 +801,7 @@ ${night}
   $("#coIg").addEventListener("click", () => sendOrder("ig"));
   document.addEventListener("submit", (e) => { if (e.target.id === "accountForm") submitAccount(e); });
 
-  $("#reviewForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    reviews.unshift({ n: $("#rvName").value.trim(), s: +$("#rvStars").value, h: "Reseña de cliente", t: $("#rvText").value.trim(), d: new Date().toLocaleDateString("es-ES") });
-    save("gs_reviews", reviews); renderReviews(); e.target.reset(); toast("¡Gracias por tu reseña!");
-  });
+
   $("#contactForm").addEventListener("submit", (e) => { e.preventDefault(); const txt = `Hola Gearsmith, soy ${$("#cName").value.trim()} (${$("#cEmail").value.trim()}). ${$("#cMsg").value.trim()}`; window.open(WA + "?text=" + encodeURIComponent(txt), "_blank", "noopener"); e.target.reset(); toast("Abriendo WhatsApp…"); });
   $("#newsForm").addEventListener("submit", (e) => { e.preventDefault(); e.target.reset(); info('<p class="eyebrow">Bienvenido</p><h2>Tu <em>10%</em> te espera</h2><p style="margin-top:10px">Usa este código en el carrito:</p><div class="code">GEARSMITH10</div><button class="btn full" id="useCode">Usar el código</button>'); });
 
