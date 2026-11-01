@@ -619,4 +619,8 @@ img,svg,video{max-width:100%}
 /* ===== Vídeo en bucle en la portada ===== */
 .hero-art .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .hero-art::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 30%),linear-gradient(0deg,rgba(0,0,0,.18),transparent 25%)}
-@media (prefers-reduced-motion:reduce){.hero-art .hero-video{display:none}}
+@media (prefers-reduced-motion:reduce){.hero-art .hero-video{animation:none}}
+.hero-art{pointer-events:auto}
+.hv-btn{position:absolute;right:16px;bottom:16px;z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.45);color:#fff;font-size:14px;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(4px)}
+.hv-btn:hover{background:rgba(0,0,0,.7)}
+.hv-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
