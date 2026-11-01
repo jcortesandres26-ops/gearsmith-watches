@@ -615,3 +615,8 @@ img,svg,video{max-width:100%}
 .tt-feed{width:min(520px,100%);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
 .tt-feed .tiktok-embed{border:0}
 @media (max-width:760px){.tt-wrap{grid-template-columns:1fr;gap:28px;text-align:center}.tt-phone{width:min(300px,86vw);margin:0 auto}.tt-feed{margin:0 auto}}
+
+/* ===== Vídeo en bucle en la portada ===== */
+.hero-art .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hero-art::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 30%),linear-gradient(0deg,rgba(0,0,0,.18),transparent 25%)}
+@media (prefers-reduced-motion:reduce){.hero-art .hero-video{display:none}}

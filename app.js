@@ -1043,7 +1043,7 @@ ${night}
   function renderAll() { renderPopular(); renderShelves(); renderShop(); renderCart(); renderWish(); if (current && !$("#pdp").hidden) renderProduct(); }
   buildFilters(); renderMega();
   const H = ["royaloak-oro-rosa-verde", "gmt-pepsi-rojo-y-azul", "nautilusopen-oro-rosa-caucho"].map((h) => byId[h]);
-  $("#heroArt").innerHTML = `<img class="hero-cover" src="img/portada.jpg" alt="">`;
+  $("#heroArt").innerHTML = `<img class="hero-cover" src="img/portada.jpg" alt=""><video class="hero-video" src="img/tiktok-fondo.mp4" poster="img/portada.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>`;
   $("#artMovement").innerHTML = art(byId["skeleton-acero"]);
   $("#artCrystal").innerHTML = art(byId["datejust-verde-menta"]);
   $("#artBuild").innerHTML = art(byId["santos-blanco-romano"]);
