@@ -597,3 +597,14 @@ img,svg,video{max-width:100%}
   .pdp-info h1{font-size:1.8rem}
   .drawer{width:100vw;max-width:100vw}
 }
+
+
+/* ===== TikTok ===== */
+.tiktok{background:var(--ink,#111);color:#fff}
+.tiktok .sub{color:rgba(255,255,255,.72)}
+.tiktok h2{color:#fff}
+.tt-wrap{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
+.tt-text .btn{margin-top:18px;background:#fff;color:#111}
+.tt-phone{width:325px;aspect-ratio:9/16;border-radius:34px;overflow:hidden;background:#000;border:8px solid #1d1d1f;box-shadow:0 30px 70px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08)}
+.tt-phone iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:760px){.tt-wrap{grid-template-columns:1fr;gap:28px;text-align:center}.tt-phone{width:min(300px,86vw);margin:0 auto}}
