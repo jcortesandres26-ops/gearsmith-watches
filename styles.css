@@ -600,7 +600,12 @@ img,svg,video{max-width:100%}
 
 
 /* ===== TikTok ===== */
-.tiktok{background:var(--ink,#111);color:#fff}
+.tiktok{background:var(--ink,#111);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.tt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.tiktok::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.6) 50%,rgba(0,0,0,.35) 100%)}
+@media (max-width:760px){.tiktok::before{background:rgba(0,0,0,.66)}}
+@media (prefers-reduced-motion:reduce){.tt-bg{display:none}}
+.tiktok .tt-text h2,.tiktok .tt-text .sub,.tiktok .tt-text .eyebrow{text-shadow:0 2px 14px rgba(0,0,0,.6)}
 .tiktok .sub{color:rgba(255,255,255,.72)}
 .tiktok h2{color:#fff}
 .tt-wrap{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
