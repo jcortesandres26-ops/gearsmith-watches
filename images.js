@@ -48,5 +48,12 @@ const IMAGES = {
  "nautilusopen-blanco": "img/relojes/nautilusopen-blanco.jpg?v=13",
  "nautilusopen-negro-total": "img/relojes/nautilusopen-negro-total.jpg?v=13",
  "nautilusopen-oro-rosa-caucho": "img/relojes/nautilusopen-oro-rosa-caucho.jpg?v=13",
- "nautilusopen-oro-rosa-negro": "img/relojes/nautilusopen-oro-rosa-negro.jpg?v=13"
+ "nautilusopen-oro-rosa-negro": "img/relojes/nautilusopen-oro-rosa-negro.jpg?v=13",
+ "omega-swatch-oro-rosa-marron": "img/relojes/omega-swatch-oro-rosa-marron.jpg?v=1",
+ "omega-swatch-tiffany": "img/relojes/omega-swatch-tiffany.jpg?v=1",
+ "omega-swatch-panda-rojo": "img/relojes/omega-swatch-panda-rojo.jpg?v=1",
+ "omega-swatch-azul-noche": "img/relojes/omega-swatch-azul-noche.jpg?v=1",
+ "omega-swatch-negro-clasico": "img/relojes/omega-swatch-negro-clasico.jpg?v=1",
+ "omega-swatch-crema-granate": "img/relojes/omega-swatch-crema-granate.jpg?v=1",
+ "omega-swatch-blanco-azul": "img/relojes/omega-swatch-blanco-azul.jpg?v=1"
 };

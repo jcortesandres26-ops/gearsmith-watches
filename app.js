@@ -26,7 +26,7 @@
   const P = (r, deg, cx = 150, cy = 200) => [cx + r * Math.sin(deg * Math.PI / 180), cy - r * Math.cos(deg * Math.PI / 180)];
 
   // ================= Catálogo =================
-  const COLLECTIONS = ["Datejust", "Day-Date", "GMT y Diver", "Prospex Turtle", "Royal Oak", "Skeleton", "Santos", "Nautilus", "Nautilus Open"].map((c) => [c, null]);
+  const COLLECTIONS = ["Datejust", "Day-Date", "GMT y Diver", "Prospex Turtle", "Royal Oak", "Skeleton", "Santos", "Nautilus", "Nautilus Open", "Omega x Swatch"].map((c) => [c, null]);
   const PART_COLS = [];
   const INTRO = {
     Datejust: "Bisel estriado, fecha y pulsera Jubilee.",
@@ -38,8 +38,9 @@
     Santos: "Caja cuadrada de 38 mm y números romanos.",
     Nautilus: "Lujo deportivo con esfera de líneas horizontales.",
     "Nautilus Open": "Corazón abierto con movimiento NH38.",
+    "Omega x Swatch": "Cronógrafo MoonSwatch a 200 €. Pídelo con el estilo de cualquier Omega x Swatch.",
   };
-  const POPULAR = ["datejust-verde-menta", "daydate-azul-hielo", "gmt-pepsi-rojo-y-azul", "turtle-turquesa", "royaloak-oro-rosa-verde", "skeleton-oro-rosa", "santos-blanco-romano", "nautilus-tiffany", "nautilusopen-oro-rosa-caucho"];
+  const POPULAR = ["datejust-verde-menta", "daydate-azul-hielo", "gmt-pepsi-rojo-y-azul", "turtle-turquesa", "royaloak-oro-rosa-verde", "skeleton-oro-rosa", "santos-blanco-romano", "nautilus-tiffany", "nautilusopen-oro-rosa-caucho", "omega-swatch-tiffany"];
 
   const COLORS = [
     ["TIFFANY", "#5fcfc1"], ["TURQUOISE", "#2fb5aa"], ["SKY BLUE", "#86c3e6"], ["LIGHT BLUE", "#9fcbea"], ["OCEAN BLUE", "#1b4d8e"],
@@ -427,7 +428,7 @@ ${night}
     $("#shelves").innerHTML = list.map((c, i) => {
       const items = PRODUCTS.filter((p) => p.col === c);
       return `<section class="section" ${i % 2 ? 'style="background:var(--white);border-block:1px solid var(--line)"' : ""}>
-        <div class="section-head"><div><p class="eyebrow">${PART_COLS.includes(c) ? "Sección personalizable" : "Elige tu modelo"}</p><h2>${PART_COLS.includes(c) ? `Personaliza: <em>${c}</em>` : `Seiko Mod <em>${c}</em>`}</h2><p class="sub">${INTRO[c] || ""}</p></div>
+        <div class="section-head"><div><p class="eyebrow">${PART_COLS.includes(c) ? "Sección personalizable" : "Elige tu modelo"}</p><h2>${PART_COLS.includes(c) ? `Personaliza: <em>${c}</em>` : c === "Omega x Swatch" ? `Omega x Swatch <em>Mod</em>` : `Seiko Mod <em>${c}</em>`}</h2><p class="sub">${INTRO[c] || ""}</p></div>
         <div class="arrows"><button class="link-more" data-col="${c}">Ver todo (${PRODUCTS.filter((p) => p.col === c).length})</button><button class="arrow" data-scroll="sh${i}" data-d="-1" aria-label="Anterior">←</button><button class="arrow" data-scroll="sh${i}" data-d="1" aria-label="Siguiente">→</button></div></div>
         <div class="shelf" id="sh${i}">${items.map(card).join("")}</div></section>`;
     }).join("");
@@ -492,7 +493,7 @@ ${night}
     $("#pdpTitle").textContent = p.name;
     $("#pdpCrumb").textContent = p.name;
     $("#pdpCol").textContent = p.col; $("#pdpCol").dataset.col = p.col;
-    $("#pdpReviews").textContent = p.acc ? "Pieza personalizable" : "Seiko Mod · Gearsmith";
+    $("#pdpReviews").textContent = p.acc ? "Pieza personalizable" : p.col === "Omega x Swatch" ? "Omega x Swatch Mod · Gearsmith" : "Seiko Mod · Gearsmith";
     $("#pdpDesc").textContent = describe(p);
     $("#pdpWa").href = WA + "?text=" + encodeURIComponent(`Hola Gearsmith, me interesa el ${p.name}. ¿Me dais más información?`);
     $("#pdpWa").onclick = () => { const opts = sel.length ? ` (${sel.join(" / ")})` : ""; $("#pdpWa").href = WA + "?text=" + encodeURIComponent(`Hola Gearsmith, me interesa el ${current.name}${opts}. ¿Me dais más información?`); };
