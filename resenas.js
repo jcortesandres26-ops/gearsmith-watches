@@ -1,6 +1,22 @@
 // Valoraciones reales de Wallapop (se actualiza solo con crons/wallapop_resenas.py)
 const WALLAPOP_REVIEWS = [
 {
+"n": "Franco V.",
+"s": 5,
+"h": "Reloj Omega x Swatch MoonSwatch Custom Gold MOD",
+"t": "Bel prodotto, buon prezzo, imballo ok. Venditore serio e professionale.",
+"d": "11/11/2026",
+"id": "551f47e4-9fcb-41a4-87a2-18c9f1f3b546"
+},
+{
+"n": "Juan",
+"s": 5,
+"h": "Reloj Seiko mod Presage Open heart nh38",
+"t": "Buena atención , buen embalaje, rápido y buena comunicación.Vendedor  recomendable 100%",
+"d": "11/11/2026",
+"id": "e557af02-f9c1-36d3-be01-f13596ef0192"
+},
+{
 "n": "Antonio M.",
 "s": 5,
 "h": "Reloj Seiko Mod Aquanaut",
