@@ -1,6 +1,14 @@
 // Valoraciones reales de Wallapop (se actualiza solo con crons/wallapop_resenas.py)
 const WALLAPOP_REVIEWS = [
 {
+"n": "Carlos H.",
+"s": 5,
+"h": "Reloj Omega x Swatch MoonSwatch Custom Steel  MOD",
+"t": "Trato inmejorable",
+"d": "13/11/2026",
+"id": "0b44e68a-afb6-406e-beca-b871d5246de0"
+},
+{
 "n": "Franco V.",
 "s": 5,
 "h": "Reloj Omega x Swatch MoonSwatch Custom Gold MOD",
